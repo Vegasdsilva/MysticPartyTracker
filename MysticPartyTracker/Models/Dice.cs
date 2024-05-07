@@ -14,5 +14,10 @@ namespace MysticPartyTracker.Models
         {
             Side = side;
         }
+
+        public int Roll()
+        {
+          return new Random().Next(Side) + 1;
+        }
     }
 }

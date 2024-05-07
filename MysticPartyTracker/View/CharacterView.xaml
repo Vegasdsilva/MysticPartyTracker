@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MysticPartyTracker.View.CharacterView"
+             Title="CharacterView">
+    <ScrollView>
+    <VerticalStackLayout>
+        <HorizontalStackLayout >
+            <Label 
+                Text="Nome do Personagem: "
+                x:Name="NameCharacter"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Padding="10"
+             
+             />
+
+            <Entry 
+                x:Name="insertName"
+                WidthRequest="500"
+               >
+                
+
+            </Entry>
+        
+            <Label 
+                Text="Nível: "
+                x:Name="LevelCharacter"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Padding="10"
+             />
+
+            <Entry 
+                x:Name="insertNivel"
+               >
+
+
+            </Entry>
+         </HorizontalStackLayout>
+
+            <Label 
+                Text="Classe do Personagem"
+                x:Name="ClassCharacter"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+             />
+
+            <Entry 
+                x:Name="insertClass"
+                
+               >
+
+
+            </Entry>
+            
+            <Label 
+                Text="Raça do Personagem"
+                x:Name="RaceCharacter"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                
+             />
+        
+            <Entry 
+                x:Name="insertRace"
+               >
+
+
+            </Entry>
+
+
+            <Button
+                x:Name="AddCharacter"
+                Text="Adicionar"
+                WidthRequest="150"
+                Margin="50"
+                Clicked="AddCharacter_Clicked"/>
+
+
+
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

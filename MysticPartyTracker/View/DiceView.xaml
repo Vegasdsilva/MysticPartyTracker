@@ -3,58 +3,67 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MysticPartyTracker.View.DiceView"
              Title="DiceView">
-    <VerticalStackLayout>
-        <Label
-            Text="6"
-            x:Name="ResultLabel"
-            HorizontalOptions="Center"
-            FontSize="100"/>
+    <ScrollView>
+        <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
+            <Label 
+            Text="Selecione a quantidade de dados"
+            />
+            <Picker x:Name="QuantityPicker" SelectedItem="{Binding Quantity}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:Int32}">
+                        <x:Int32>1</x:Int32>
+                        <x:Int32>2</x:Int32>
+                        <x:Int32>3</x:Int32>
+                        <x:Int32>4</x:Int32>
+                        <x:Int32>5</x:Int32>
+                        <x:Int32>6</x:Int32>
+                        <x:Int32>7</x:Int32>
+                        <x:Int32>8</x:Int32>
+                        <x:Int32>9</x:Int32>
+                        <x:Int32>10</x:Int32>
+                        <x:Int32>20</x:Int32>
+                        <x:Int32>50</x:Int32>
+                        <x:Int32>80</x:Int32>
+                        <x:Int32>100</x:Int32>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
 
-        <Picker x:Name="picker"
-        Title="Select a monkey"
-        WidthRequest="400">
-            
-            
-            
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Baboon</x:String>
-                    <x:String>Capuchin Monkey</x:String>
-                    <x:String>Blue Monkey</x:String>
-                    <x:String>Squirrel Monkey</x:String>
-                    <x:String>Golden Lion Tamarin</x:String>
-                    <x:String>Howler Monkey</x:String>
-                    <x:String>Japanese Macaque</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
+            <Label Text="Selecione a quantidade de lado dos dados" />
+            <Picker x:Name="SidesPicker" SelectedItem="{Binding NumberSides}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:Int32}">
+                        <x:Int32>4</x:Int32>
+                        <x:Int32>6</x:Int32>
+                        <x:Int32>10</x:Int32>
+                        <x:Int32>12</x:Int32>
+                        <x:Int32>20</x:Int32>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
 
-        <Picker x:Name="SidesPicker"
-                WidthRequest="400"
-                Title="Selecione a Quantidade de Lados">
-
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>4</x:String>
-                    <x:String>6</x:String>
-                    <x:String>10</x:String>
-                    <x:String>20</x:String>
-                    <x:String>100</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
-
-        <Button
+            <Button 
             x:Name="RollBtn"
-            Text="ROLAR O DADO" 
-            BackgroundColor="DarkGray" 
-            WidthRequest="200"
-            Clicked="RollBtn_Clicked"
-            Margin="200">
-           
-        </Button>
+            Text="Rodar"
+            AutomationProperties.Name="Rodar os dados"
+            Command="{Binding RollCommand}"
+            />
+            <Label
+            x:Name="resultString"
+            Text="{Binding Total}"
+            FontSize="Large"/>
+
+            <CollectionView ItemsSource="{Binding Rolls}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding }"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+                
 
 
-            
-    </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
