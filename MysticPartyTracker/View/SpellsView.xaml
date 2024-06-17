@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MysticPartyTracker.View.SpellsView"
+             Title="SpellsView">
+    <VerticalStackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+    
+        <CollectionView ItemsSource="{Binding Result}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Frame
+                            BackgroundColor="WhiteSmoke"
+                            BorderColor="DarkCyan"
+                            Margin="100,10,100,20"> 
+                            <StackLayout>
+                        <HorizontalStackLayout>
+
+                            <Label
+                                FontAttributes="Bold"
+                                Text="Index: "
+                                FontSize="Small"/>
+                             <Label
+                                Text="{Binding Index}"
+                                Margin="7"
+                                FontSize="Caption"
+                                FontAttributes="Bold"/>
+
+                             </HorizontalStackLayout>
+                                <BoxView 
+                                    BackgroundColor="DarkSlateGray"
+                                    HeightRequest="6"
+                                    CornerRadius="50"/>
+                                <HorizontalStackLayout>
+                             <Label
+                                Text="Name: "
+                                FontSize="Small"
+                                FontAttributes="Bold"
+                                Margin="5"/>
+                            <Label
+                                Text="{Binding Name}"
+                                Margin="5,10"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label
+                                    Text="Level: "
+                                    FontSize="Small"
+                                    FontAttributes="Bold"
+                                    Margin="5"/>
+                               <Label
+                                    Text="{Binding Level}"
+                                    Margin="5,10"/>
+                                <Label
+                                    Text="Level: "
+                                    FontSize="Small"
+                                    FontAttributes="Bold"
+                                    Margin="5"/>
+                                    <Label
+                                    Text="{Binding Url}"
+                                    Margin="5,10"/>
+
+                                    
+                                </HorizontalStackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button
+        Text="Buscar Spells"
+        WidthRequest="160"
+        Command="{Binding LoadSpellsCommand}"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -12,7 +12,7 @@ namespace MysticPartyTracker.ViewModels
 {
     public partial class CharacterViewModel : ObservableObject
     {
-        public CharacterViewModel()
+        public CharacterViewModel() //construtor
         {
             AddCommand = new Command(Add);
         }
@@ -41,7 +41,8 @@ namespace MysticPartyTracker.ViewModels
         public void Add()
         {
             Character person = new Character(Nome, Classe, Raca, Nivel);
-            _characters.Add(person);    
+            _characters.Add(person);
+           // _characters.Add(new Character(Nome, Classe, Raca, Nivel));
         }
 
     }

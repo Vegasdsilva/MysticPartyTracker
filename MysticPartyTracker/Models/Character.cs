@@ -16,9 +16,9 @@ namespace MysticPartyTracker.Models
             Nivel = nivel;
         }
 
-        public string Nome { get; set; } = string.Empty;
-        public string Classe { get; set; } = string.Empty;
-        public string Raca { get; set; } = string.Empty;
+        public string Nome { get; set; }
+        public string Classe { get; set; }
+        public string Raca { get; set; }
         public int Nivel { get; set; }
     }
 }
